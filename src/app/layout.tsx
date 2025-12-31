@@ -6,8 +6,11 @@ import "./globals.css";
 import ThemeRegistry from "@/components/layout/ThemeRegistry";
 import EmotionRegistry from "@/components/layout/EmotionRegistry";
 // Import Navigation component
-import "@/components/layout/Navigation";
 import Navigation from "@/components/layout/Navigation";
+
+// Import Footer component
+import Footer from "@/components/layout/Footer";
+
 
 // Configure Roboto using Next.js font optimization
 const roboto = Roboto({
@@ -34,6 +37,7 @@ export default function RootLayout({
           <ThemeRegistry>
             <Navigation />
             {children}
+            <Footer />
             </ThemeRegistry>
         </EmotionRegistry>
       </body>
