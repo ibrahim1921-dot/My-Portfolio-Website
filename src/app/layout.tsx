@@ -1,23 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 
-// Import MUI theme wrapper
+// MUI wrappers
 import ThemeRegistry from "@/components/layout/ThemeRegistry";
+import EmotionRegistry from "@/components/layout/EmotionRegistry";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Configure Roboto using Next.js font optimization
+const roboto = Roboto({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
+  variable: "--font-roboto",
 });
 
 export const metadata: Metadata = {
-  title: "My Porfolio",
-  description: "My personal portfolio website showcasing my projects and skills.",
+  title: "My Portfolio",
+  description:
+    "My personal portfolio website showcasing my projects and skills.",
 };
 
 export default function RootLayout({
@@ -27,8 +26,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <ThemeRegistry>{children}</ThemeRegistry>
+      <body className={roboto.variable}>
+        <EmotionRegistry>
+          <ThemeRegistry>{children}</ThemeRegistry>
+        </EmotionRegistry>
       </body>
     </html>
   );
