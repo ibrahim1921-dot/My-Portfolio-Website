@@ -5,6 +5,9 @@ import "./globals.css";
 // MUI wrappers
 import ThemeRegistry from "@/components/layout/ThemeRegistry";
 import EmotionRegistry from "@/components/layout/EmotionRegistry";
+// Import Navigation component
+import "@/components/layout/Navigation";
+import Navigation from "@/components/layout/Navigation";
 
 // Configure Roboto using Next.js font optimization
 const roboto = Roboto({
@@ -14,7 +17,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
+  title: "Abdul-Sobur Ibrahim | Portfolio",
   description:
     "My personal portfolio website showcasing my projects and skills.",
 };
@@ -28,7 +31,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={roboto.variable}>
         <EmotionRegistry>
-          <ThemeRegistry>{children}</ThemeRegistry>
+          <ThemeRegistry>
+            <Navigation />
+            {children}
+            </ThemeRegistry>
         </EmotionRegistry>
       </body>
     </html>
