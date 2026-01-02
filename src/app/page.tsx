@@ -1,11 +1,14 @@
-"use client";
+
 
 import { Box } from "@mui/material";
 import HeroSection from "@/components/home/HeroSection";
 import TechStackSection from "@/components/home/TechStackSection";
 import BlogSection from "@/components/home/BlogSection";
+import { getRecentPosts } from "@/lib/blog";
 
-export default function Home() {
+
+export default async function Home() {
+  const recentPosts = await getRecentPosts(3);
   return (
     <Box
       component="main"
@@ -19,7 +22,7 @@ export default function Home() {
     >
       <HeroSection />
       <TechStackSection />
-      <BlogSection />
+      <BlogSection recentPosts={recentPosts} />
     </Box>
   );
 }
