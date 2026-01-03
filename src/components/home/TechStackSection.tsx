@@ -5,7 +5,6 @@ import CodeBlocksIcon from "@mui/icons-material/CodeOutlined";
 import JavascriptIcon from "@mui/icons-material/Javascript";
 import TerminalIcon from "@mui/icons-material/Terminal";
 import DatasetIcon from "@mui/icons-material/Dataset";
-import CssIcon from "@mui/icons-material/Css";
 import DnsIcon from "@mui/icons-material/Dns";
 import StyleIcon from "@mui/icons-material/Style"; // For Material UI
 const technologies = [

@@ -43,9 +43,9 @@ export default function HeroSection() {
                   maxWidth: "600px",
                 }}
               >
-                I&apos;m Abdul-Sobur Ibrahim, a full-stack developer working with
-                JavaScript frameworks and Python, documenting my journey and
-                constantly learning through real-world projects.
+                I&apos;m Abdul-Sobur Ibrahim, a full-stack developer working
+                with JavaScript frameworks and Python, documenting my journey
+                and constantly learning through real-world projects.
               </Typography>
             </Stack>
 
@@ -121,11 +121,11 @@ export default function HeroSection() {
                 sx={{
                   width: "100%",
                   height: "100%",
-                  backgroundImage:
-                    'url("https://lh3.googleusercontent.com/aida-public/AB6AXuCfcWg_KjL5hAZ-RbXE1oaKxrP6zC5_9aR_hOs-PmXxQioA4eo0U6l3ekDJBCIf0TDYZTkwJXsjNjDbASQwni3R9_jkGJH7yUdqwrjjtAkGJFIMTpXc4WaFYTgmMIlfRe2GD7F0GVn3uDXQncrAflWSW6Ud09y30TGVLKI214t1RGszmyNhe7SOE3Dubg3g6XzSE-eaAm84zsjpcI5mUOYKiLHcccACcs3noNpxuPpOO3kdKO6rGEKcxhH6xpNAC2c407xydYFhesIg")',
+                  backgroundImage: 'url("/profile.jpg")',
                   backgroundSize: "cover",
-                  backgroundPosition: "center",
+                  backgroundPosition: "center top",
                   transition: "transform 0.7s ease-in-out",
+                  filter: "brightness(1.05) contrast(1.1)",
                 }}
               />
             </Box>
