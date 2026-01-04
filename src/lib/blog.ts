@@ -3,13 +3,18 @@ import path from 'path';
 import matter from 'gray-matter';
 import type { BlogPost } from "@/types/blog";
 
-const blogDirectory = path.join(process.cwd(), 'src', 'content', 'blog');
+const blogDirectory = path.join(process.cwd(), 'content', 'blog');
 
 export async function getAllBlogPosts(): Promise<BlogPost[]> {
+    if(!fs.existsSync(blogDirectory)) {
+        return [];
+    }
     // Get file names under /content/blog
   const fileNames = fs.readdirSync(blogDirectory);
   
-  const allPostsData = fileNames.map((fileName, index) => {
+  const allPostsData = fileNames
+  .filter((fileName) => fileName.endsWith('.md'))
+  .map((fileName, index) => {
     // Remove ".md" from file name to get slug
     const slug = fileName.replace(/\.md$/, '');
     
