@@ -27,6 +27,7 @@ export default function AboutHero() {
               border: 4,
               borderColor: "primary.main",
               boxShadow: "0 10px 40px rgba(55, 19, 236, 0.3)",
+              '& img': { objectPosition: 'center top' },
             }}
           />
 

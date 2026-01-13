@@ -15,15 +15,17 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CodeIcon from "@mui/icons-material/Code";
+import { usePathname } from "next/navigation";
 
 const pages = [
-  { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
-  { name: "Projects", path: "/projects" },
-  { name: "Blog", path: "/blog" },
+  { label: "Home", path: "/" },
+  { label: "About", path: "/about" },
+  { label: "Projects", path: "/projects" },
+  { label: "Blog", path: "/blog" },
 ];
 
 export default function Navigation() {
+  const pathname = usePathname();
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -38,7 +40,7 @@ export default function Navigation() {
 
   return (
     <AppBar
-      position="sticky"
+      position="fixed"
       sx={{
         bgcolor: "background.default",
         backdropFilter: "blur(12px)",
@@ -123,12 +125,12 @@ export default function Navigation() {
             >
               {pages.map((page) => (
                 <MenuItem
-                  key={page.name}
+                  key={page.label}
                   onClick={handleCloseNavMenu}
                   component={Link}
                   href={page.path}
                 >
-                  <Typography textAlign="center">{page.name}</Typography>
+                  <Typography textAlign="center">{page.label}</Typography>
                 </MenuItem>
               ))}
               <MenuItem
@@ -202,21 +204,24 @@ export default function Navigation() {
             <Box sx={{ display: "flex", gap: 4 }}>
               {pages.map((page) => (
                 <Button
-                  key={page.name}
+                  key={page.label}
                   component={Link}
                   href={page.path}
                   sx={{
-                    color: "text.primary",
-                    fontWeight: 500,
+                    color:
+                      pathname === page.path ? "primary.main" : "text.primary",
+                    fontWeight: pathname === page.path ? 600 : 500,
                     fontSize: "0.875rem",
                     textTransform: "none",
+                    borderBottom: pathname === page.path ? 2 : 0,
+                    borderColor: "primary.main",
                     "&:hover": {
                       color: "primary.main",
                       bgcolor: "transparent",
                     },
                   }}
                 >
-                  {page.name}
+                  {page.label}
                 </Button>
               ))}
             </Box>

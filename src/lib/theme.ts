@@ -37,6 +37,17 @@ export const theme = createTheme({
             },
         },
     },
+
+     MuiButtonBase: {
+            defaultProps: {
+                disableRipple: true, // Disable ripple effect globally
+            }
+        },
+        MuiButton: {
+            defaultProps: {
+                disableRipple: true, // Disable ripple effect for Button component
+            }
+        }
   },
 });
 

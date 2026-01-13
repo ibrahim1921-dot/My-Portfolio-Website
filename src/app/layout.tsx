@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
+import Box from "@mui/material/Box";
 
 // MUI wrappers
 import ThemeRegistry from "@/components/layout/ThemeRegistry";
@@ -31,14 +32,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={roboto.variable}>
+    <html lang="en" suppressHydrationWarning={true}>
+      <body className={roboto.variable} suppressHydrationWarning={true}>
         <EmotionRegistry>
           <ThemeRegistry>
             <Navigation />
-            {children}
+            <Box component="main" sx={{ pt: { xs: "64px", sm: "80px" } }}>
+              {children}
+            </Box>
             <Footer />
-            </ThemeRegistry>
+          </ThemeRegistry>
         </EmotionRegistry>
       </body>
     </html>
