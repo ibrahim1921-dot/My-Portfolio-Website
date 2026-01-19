@@ -52,7 +52,7 @@ const socialLinks: SocialLink[] = [
   {
     name: "Twitter",
     icon: <TwitterIcon />,
-    url: "https://twitter.com/yourusername",
+    url: "https://twitter.com/CodeWithIbra1",
     color: "#1DA1F2",
   },
 ];

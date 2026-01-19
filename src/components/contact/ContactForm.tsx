@@ -16,7 +16,6 @@ import SendIcon from "@mui/icons-material/Send";
 interface FormData {
   name: string;
   email: string;
-  subject: string;
   message: string;
 }
 
@@ -29,7 +28,6 @@ export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
-    subject: "",
     message: "",
   });
 
@@ -51,26 +49,38 @@ export default function ContactForm() {
     setIsSubmitting(true);
     setStatus({ type: null, message: "" });
 
-    // Simulate form submission (replace with actual API call)
     try {
-      // Example: await fetch('/api/contact', { method: 'POST', body: JSON.stringify(formData) })
-
-      // Simulate delay
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-
-      setStatus({
-        type: "success",
-        message: "Thank you for your message! I will get back to you soon.",
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
 
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
-    } catch {
+      const data = await response.json();
+      if (response.ok) {
+        setStatus({
+          type: "success",
+          message: "Thank you for your message! I will get back to you soon.",
+        });
+
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        setStatus({
+          type: "error",
+          message:
+            data.message ||
+            "Failed to send message. Please try again later.",
+        });
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
       setStatus({
         type: "error",
         message: "Something went wrong. Please try again later.",
@@ -125,18 +135,6 @@ export default function ContactForm() {
               name="email"
               type="email"
               value={formData.email}
-              onChange={handleChange}
-              required
-              variant="outlined"
-              disabled={isSubmitting}
-            />
-
-            {/* Subject Field */}
-            <TextField
-              fullWidth
-              label="Subject"
-              name="subject"
-              value={formData.subject}
               onChange={handleChange}
               required
               variant="outlined"

@@ -8,28 +8,39 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+
 export default function Footer() {
-  const socialLinks = [
+  interface SocialLink {
+    name: string;
+    icon: React.ReactNode;
+    url: string;
+    color: string;
+  }
+  const socialLinks: SocialLink[] = [
     {
       name: "GitHub",
       icon: <GitHubIcon />,
       url: "https://github.com/ibrahim1921-dot",
+      color: "#333333",
     },
     {
       name: "Twitter",
       icon: <TwitterIcon />,
       url: "https://twitter.com/CodeWithIbra1",
+      color: "#1DA1F2",
     },
     {
       name: "LinkedIn",
       icon: <LinkedInIcon />,
-      url: "https://linkedin.com/in/abdul-soburibrahim",
+      url: "https://linkedin.com/in/abdul-sobur-ibrahim-342aa634a",
+      color: "#0A66C2",
     },
     {
-        name: "WhatsApp",
-        icon: <WhatsAppIcon />,
-        url: "https://wa.me/+233507721958",
-    }
+      name: "WhatsApp",
+      icon: <WhatsAppIcon />,
+      url: "https://wa.me/+233507721958",
+      color: "#25D366",
+    },
   ];
 
   return (
@@ -90,7 +101,7 @@ export default function Footer() {
                 sx={{
                   color: "text.secondary",
                   "&:hover": {
-                    color: "primary.main",
+                    color: link.color,
                   },
                 }}
               >
