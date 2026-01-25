@@ -1,16 +1,12 @@
 "use client";
 
 import { Box, Container, Typography, Grid, Paper, Stack } from "@mui/material";
-import CodeBlocksIcon from "@mui/icons-material/CodeOutlined";
 import JavascriptIcon from "@mui/icons-material/Javascript";
-import TerminalIcon from "@mui/icons-material/Terminal";
-import DatasetIcon from "@mui/icons-material/Dataset";
-import DnsIcon from "@mui/icons-material/Dns";
-import StyleIcon from "@mui/icons-material/Style"; // For Material UI
+import Image from "next/image";
 const technologies = [
   {
     name: "React",
-    icon: <CodeBlocksIcon sx={{ fontSize: 40 }} />,
+    icon: "/icons/react.svg",
     color: "#61DAFB",
   },
   {
@@ -20,22 +16,22 @@ const technologies = [
   },
   {
     name: "Python",
-    icon: <TerminalIcon sx={{ fontSize: 40 }} />,
+    icon: "/icons/python.svg",
     color: "#3776AB",
   },
   {
     name: "Next.js",
-    icon: <DatasetIcon sx={{ fontSize: 40 }} />,
+    icon: "/icons/next.svg",
     color: "#000000",
   },
   {
     name: "Material UI",
-    icon: <StyleIcon sx={{ fontSize: 40 }} />,
+    icon: "/icons/mui.svg",
     color: "#38B2AC",
   },
   {
     name: "Node.js + Express",
-    icon: <DnsIcon sx={{ fontSize: 40 }} />,
+    icon: "icons/node.svg",
     color: "#339933",
   },
 ];
@@ -71,7 +67,7 @@ export default function TechStackSection() {
 
           <Grid container spacing={2}>
             {technologies.map((tech, index) => (
-              <Grid size={{xs: 6, sm: 4, md: 3, lg: 2}} key={index}>
+              <Grid size={{ xs: 6, sm: 4, md: 3, lg: 2 }} key={index}>
                 <Paper
                   elevation={0}
                   sx={{
@@ -93,11 +89,26 @@ export default function TechStackSection() {
                     },
                   }}
                 >
-                  <Box
-                    className="tech-icon"
-                    sx={{ color: "text.secondary", transition: "color 0.3s" }}
+                 
+                    <Box
+                    sx={{
+                      width: 60,
+                      height: 60,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      
+                    }}
                   >
-                    {tech.icon}
+                    {typeof tech.icon === "string" ? (
+                      <Image src={tech.icon}
+                      alt={tech.name}
+                      width={40}
+                      height={40}
+                      style={{objectFit: "contain"}} />
+                    ) : (
+                      tech.icon
+                    )}
                   </Box>
                   <Typography variant="body2" fontWeight={700}>
                     {tech.name}
