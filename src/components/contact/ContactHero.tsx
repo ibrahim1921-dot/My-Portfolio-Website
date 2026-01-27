@@ -55,7 +55,7 @@ export default function ContactHero() {
             }}
           >
             Have a question or want to work together? I&apos;d love to hear from you.
-            Fill out the form below or reach out through my social channels.
+            Fill out the form below or reach out through my social handles.
           </Typography>
         </Stack>
       </Container>
