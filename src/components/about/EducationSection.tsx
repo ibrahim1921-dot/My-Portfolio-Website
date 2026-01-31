@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Container, Typography, Stack, Paper, Grid } from "@mui/material";
+import { Box, Container, Typography, Stack, Paper, Grid, Button } from "@mui/material";
 import SchoolIcon from "@mui/icons-material/School";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 
@@ -15,6 +15,7 @@ interface Certification {
   title: string;
   issuer: string;
   year: string;
+  path: string;
 }
 
 const education: Education[] = [
@@ -30,8 +31,16 @@ const education: Education[] = [
 const certifications: Certification[] = [
   {
     title: "Frontend Web Development",
-    issuer: "ZapTek",
+    issuer: "ZapTech",
     year: "2025",
+    path: "/certificates/zaptech.jpg"
+  },
+
+  {
+    title: "Python for Programmers",
+    issuer: "IBM - SkillsBuild",
+    year: "2026",
+    path: "/certificates/ibm_python.jpg"
   }
 ];
 
@@ -184,6 +193,18 @@ export default function EducationSection() {
                           {cert.issuer} • {cert.year}
                         </Typography>
                       </Stack>
+                      <Button
+                      variant="outlined"
+                      size="small"
+                      onClick={() => window.open(cert.path, '_blank')}
+                      sx={{
+                        borderRadius: 2,
+                        TextTransform: 'none',
+                        flexShrink: 0,
+                      }}
+                      >
+                      View Certificate
+                      </Button>
                     </Stack>
                   </Paper>
                 ))}
