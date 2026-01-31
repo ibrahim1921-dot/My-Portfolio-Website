@@ -3,12 +3,14 @@
 import { Box, Container, Typography, Stack, Paper, Grid, Button } from "@mui/material";
 import SchoolIcon from "@mui/icons-material/School";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
+import Img from "next/image";
 
 interface Education {
   degree: string;
   institution: string;
   period: string;
   description?: string;
+  logo?: string;
 }
 
 interface Certification {
@@ -25,6 +27,7 @@ const education: Education[] = [
     period: "2025 - 2028",
     description:
       "Currently pursuing a degree with a strong academic focus on skills building in areas such as software engineering principles and efficient data structures. Beyond core coursework, I serve as a lead developer for collaborative group projects and actively represent in hackathons.",
+    logo: "/images/logo/knust_logo.png"
   },
 ];
 
@@ -94,7 +97,7 @@ export default function EducationSection() {
                           width: 40,
                           height: 40,
                           borderRadius: 2,
-                          bgcolor: "primary.main",
+                          bgcolor: edu.logo ? "" : "primary.main",
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
@@ -102,7 +105,19 @@ export default function EducationSection() {
                           flexShrink: 0,
                         }}
                       >
-                        <SchoolIcon />
+                       {edu.logo ? (
+                         <Img src={edu.logo}
+                          alt={`${edu.institution} logo`}
+                          width={40}
+                          height={40} 
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "contain",
+                          }}/>
+                       ) : (
+                         <SchoolIcon />
+                       )}
                       </Box>
                       <Stack spacing={0.5} flex={1}>
                         <Typography variant="h6" fontWeight={700}>
