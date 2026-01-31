@@ -183,7 +183,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           >
             View Details
           </Button>
-          {project.liveUrl && (
+          {/* {project.liveUrl && (
             <Button
               component={Link}
               href={project.liveUrl}
@@ -199,7 +199,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             >
               Live
             </Button>
-          )}
+          )} */}
         </Stack>
       </CardContent>
     </Card>

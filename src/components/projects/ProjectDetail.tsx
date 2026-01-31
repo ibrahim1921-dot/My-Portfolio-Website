@@ -110,7 +110,7 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
                   View Code
                 </Button>
               )}
-              {project.liveUrl && (
+              {/* {project.liveUrl && (
                 <Button
                   component={Link}
                   href={project.liveUrl}
@@ -126,7 +126,7 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
                 >
                   Live Demo
                 </Button>
-              )}
+              )} */}
             </Stack>
           </Stack>
 
