@@ -3,7 +3,7 @@
 import * as React from "react";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import {theme} from "@/lib/theme";
+import {lightTheme} from "@/lib/theme";
 
 export default function ThemeRegistry({
   children,
@@ -11,7 +11,7 @@ export default function ThemeRegistry({
   children: React.ReactNode;
 }) {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={lightTheme}>
       <CssBaseline />
       {children}
     </ThemeProvider>
