@@ -94,103 +94,112 @@ export default function Navigation() {
             </Box>
           </Link>
 
-          {/* Mobile Menu */}
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="navigation menu"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="default"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              {pages.map((page) => (
+          <Box
+            sx={{
+              display: { xs: "flex", md: "none" },
+              alignItems: "center",
+              justifyContent: "space-between",
+              width: "100%",
+            }}
+          >
+            {/* Logo - Mobile */}
+            <Box>
+              <Link href="/" passHref style={{ textDecoration: "none" }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 1,
+
+                    cursor: "pointer",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: 32,
+                      height: 32,
+                      borderRadius: 1,
+                      bgcolor: "primary.main",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      color: "white",
+                    }}
+                  >
+                    <CodeIcon fontSize="small" />
+                  </Box>
+                  <Typography
+                    variant="h6"
+                    noWrap
+                    sx={{
+                      fontWeight: 700,
+                      letterSpacing: "-0.02em",
+                      color: "text.primary",
+                    }}
+                  >
+                    ASI
+                  </Typography>
+                </Box>
+              </Link>
+            </Box>
+            {/* Mobile Menu */}
+            <Box sx={{ gap: 1, display: { xs: 'flex', md: 'none' }, alignItems: "center" }}>
+              <ToggleTheme />
+
+              <IconButton
+                size="large"
+                aria-label="navigation menu"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleOpenNavMenu}
+                sx={{ display: { sm: "none" } }}
+                color="default"
+              >
+                <MenuIcon />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorElNav}
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "left",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "left",
+                }}
+                open={Boolean(anchorElNav)}
+                onClose={handleCloseNavMenu}
+                sx={{
+                  display: { xs: "block", md: "none" },
+                }}
+              >
+                {pages.map((page) => (
+                  <MenuItem
+                    key={page.label}
+                    onClick={handleCloseNavMenu}
+                    component={Link}
+                    href={page.path}
+                  >
+                    <Typography textAlign="center">{page.label}</Typography>
+                  </MenuItem>
+                ))}
                 <MenuItem
-                  key={page.label}
                   onClick={handleCloseNavMenu}
                   component={Link}
-                  href={page.path}
+                  href="/contact"
                 >
-                  <Typography textAlign="center">{page.label}</Typography>
+                  <Typography
+                    textAlign="center"
+                    sx={{ color: "primary.main", fontWeight: 600 }}
+                  >
+                    Contact
+                  </Typography>
                 </MenuItem>
-              ))}
-              <MenuItem
-                onClick={handleCloseNavMenu}
-                component={Link}
-                href="/contact"
-              >
-                <Typography
-                  textAlign="center"
-                  sx={{ color: "primary.main", fontWeight: 600 }}
-                >
-                  Contact
-                </Typography>
-              </MenuItem>
-            </Menu>
-          </Box>
-
-          {/* Logo - Mobile */}
-          <Link
-            href="/"
-            passHref
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            <Box
-              sx={{
-                display: { xs: "flex", md: "none" },
-                alignItems: "center",
-                gap: 1.5,
-                flexGrow: 1,
-                cursor: "pointer",
-              }}
-            >
-              <Box
-                sx={{
-                  width: 32,
-                  height: 32,
-                  borderRadius: 1,
-                  bgcolor: "primary.main",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  color: "white",
-                }}
-              >
-                <CodeIcon fontSize="small" />
-              </Box>
-              <Typography
-                variant="h6"
-                noWrap
-                sx={{
-                  fontWeight: 700,
-                  letterSpacing: "-0.02em",
-                  color: "text.primary",
-                }}
-              >
-                ASI
-              </Typography>
+              </Menu>
             </Box>
-          </Link>
+          </Box>
 
           {/* Desktop Navigation */}
           <Box
