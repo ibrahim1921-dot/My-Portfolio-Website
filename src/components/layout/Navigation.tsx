@@ -16,6 +16,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import CodeIcon from "@mui/icons-material/Code";
 import { usePathname } from "next/navigation";
+import ToggleTheme from "./ToggleTheme";
 
 const pages = [
   { label: "Home", path: "/" },
@@ -239,6 +240,7 @@ export default function Navigation() {
             >
               Contact
             </Button>
+            <ToggleTheme />
           </Box>
         </Toolbar>
       </Container>

@@ -33,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body className={roboto.variable} suppressHydrationWarning={true}>
+      <body className={roboto.variable} style={{ margin: 0, padding: 0 }}>
         <EmotionRegistry>
           <ThemeRegistry>
             <Navigation />
