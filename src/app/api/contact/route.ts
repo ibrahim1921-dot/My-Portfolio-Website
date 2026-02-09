@@ -40,7 +40,7 @@ export async function POST(request: Request) {
                 padding: 20px;
               }
               .header {
-                background-color: #3713ec;
+                background-color: #90caf9;
                 color: white;
                 padding: 20px;
                 text-align: center;
@@ -57,13 +57,13 @@ export async function POST(request: Request) {
               }
               .label {
                 font-weight: bold;
-                color: #3713ec;
+                color: #90caf9;
               }
               .value {
                 margin-top: 5px;
                 padding: 10px;
                 background-color: white;
-                border-left: 3px solid #3713ec;
+                border-left: 3px solid #90caf9;
               }
             </style>
           </head>
