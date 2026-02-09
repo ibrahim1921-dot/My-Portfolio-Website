@@ -22,7 +22,39 @@ interface ProjectDetailProps {
 
 export default function ProjectDetail({ project }: ProjectDetailProps) {
   return (
-    <Box component="article" sx={{ width: "100%", py: { xs: 4, md: 6 } }}>
+    <Box
+      component="article"
+      sx={{
+        width: "100%",
+        py: { xs: 4, md: 6 },
+        "& code": {
+          backgroundColor: (theme) =>
+            theme.palette.mode === "dark"
+              ? "rgba(110, 118, 129, 0.4)"
+              : "rgba(175, 184, 193, 0.2)",
+          color: "text.primary",
+          padding: "0.2em 0.4em",
+          borderRadius: "6px",
+          fontSize: "85%",
+          fontFamily: "monospace",
+        },
+        "& pre": {
+          backgroundColor: (theme) =>
+            theme.palette.mode === "dark"
+              ? "rgba(30, 30, 30, 1)"
+              : "rgba(246, 248, 250, 1)",
+          padding: "16px",
+          borderRadius: "8px",
+          overflow: "auto",
+          border: "1px solid",
+          borderColor: "divider",
+        },
+        "& pre code": {
+          backgroundColor: "transparent",
+          padding: 0,
+        },
+      }}
+    >
       <Container maxWidth="md">
         <Stack spacing={4}>
           {/* Back Button */}

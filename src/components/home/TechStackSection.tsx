@@ -97,6 +97,9 @@ export default function TechStackSection() {
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
+                      // color: 'primary.main'
+                      filter: (theme) => 
+                        theme.palette.mode === 'dark' ? 'brightness(0) invert(1)' : 'none',
                       
                     }}
                   >
@@ -105,7 +108,7 @@ export default function TechStackSection() {
                       alt={tech.name}
                       width={40}
                       height={40}
-                      style={{objectFit: "contain"}} />
+                      style={{objectFit: "contain",}} />
                     ) : (
                       tech.icon
                     )}

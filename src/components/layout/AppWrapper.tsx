@@ -1,14 +1,12 @@
 "use client";
 
 import { Box } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
 
 export default function AppWrapper({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const theme = useTheme();
 
   return (
     <Box
