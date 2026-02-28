@@ -96,9 +96,24 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico" }, // Default favicon
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
     shortcut: "/favicon-16x16.png",
+
     apple: "/apple-touch-icon.png",
+    other: [
+      {
+        rel: "android-chrome-192x192",
+        url: "/android-chrome-192x192.png",
+      },
+      {
+        rel: "android-chrome-512x512",
+        url: "/android-chrome-512x512.png",
+      },
+    ],
   },
   manifest: "/site.webmanifest",
   alternates: {
@@ -106,10 +121,9 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "ZSrji5wGOZunah__ECMZMF3XeJOZLczdd4fVobVy6Lk",
-    other:{
-      'msvalidate.01': '5CF5A89C7C8A4F204D6AAFE2173F952F',
-    } 
-    
+    other: {
+      "msvalidate.01": "5CF5A89C7C8A4F204D6AAFE2173F952F",
+    },
   },
 };
 
