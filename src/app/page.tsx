@@ -7,6 +7,18 @@ import BlogSection from "@/components/home/BlogSection";
 import ProjectSection from "@/components/home/ProjectSection";
 import { getRecentPosts } from "@/lib/blog";
 import { getFeaturedProjects } from "@/lib/projects";
+import {Metadata} from "next";
+
+export const metadata: Metadata = {
+  title: "Home",
+  description:
+    "Welcome to Abdul-Sobur Ibrahim's portfolio. Full-stack developer specializing in React, Next.js, and Python.",
+  openGraph: {
+    title: "Abdul-Sobur Ibrahim | Full-Stack Developer",
+    description: "Welcome to my portfolio. Explore my projects and blog posts.",
+    url: "https://abdul-sobur-portfolio.vercel.app",
+  },
+};
 
 
 export default async function Home() {
