@@ -26,6 +26,7 @@ export default function StructuredData() {
       "Next.js",
       "Python",
       "Node.js",
+      "Express.js",
       "Web Development",
       "Software Engineering",
     ],
