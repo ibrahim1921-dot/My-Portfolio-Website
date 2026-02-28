@@ -8,6 +8,10 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: ['/api/', '/.next/'],
       },
+      {
+        userAgent: 'Googlebot',
+        allow: '/',
+      },
     ],
     sitemap: 'https://abdul-sobur-portfolio.vercel.app/sitemap.xml',
   };
