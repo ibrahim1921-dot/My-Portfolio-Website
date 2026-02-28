@@ -12,7 +12,7 @@ import {Metadata} from "next";
 export const metadata: Metadata = {
   title: "Home",
   description:
-    "Welcome to Abdul-Sobur Ibrahim's portfolio. Full-stack developer specializing in React, Next.js, and Python.",
+    " I'm Abdul-Sobur Ibrahim, a full-stack developer working with JavaScript frameworks and Python, documenting my journey and constantly learning through real-world projects.",
   openGraph: {
     title: "Abdul-Sobur Ibrahim | Full-Stack Developer",
     description: "Welcome to my portfolio. Explore my projects and blog posts.",
