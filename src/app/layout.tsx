@@ -3,6 +3,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import Box from "@mui/material/Box";
 import StructuredData from "@/components/structuredData";
+import Analytics from "@/components/analytics";
 
 // MUI wrappers
 import ThemeRegistry from "@/components/layout/ThemeRegistry";
@@ -108,7 +109,7 @@ export const metadata: Metadata = {
     other:{
       'msvalidate.01': '5CF5A89C7C8A4F204D6AAFE2173F952F',
     } 
-    // <meta name="msvalidate.01" content="5CF5A89C7C8A4F204D6AAFE2173F952F" />
+    
   },
 };
 
@@ -123,6 +124,7 @@ export default function RootLayout({
         <StructuredData />
       </head>
       <body className={roboto.variable} style={{ margin: 0, padding: 0 }} suppressHydrationWarning={true}>
+        <Analytics />
         <EmotionRegistry>
           <ThemeRegistry>
             <Navigation />
