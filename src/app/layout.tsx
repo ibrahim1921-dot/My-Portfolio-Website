@@ -104,8 +104,11 @@ export const metadata: Metadata = {
     canonical: "https://abdul-sobur-portfolio.vercel.app",
   },
   verification: {
-    google: "ZSrji5wGOZunah__ECMZMF3XeJOZLczdd4fVobVy6Lk", // Get from Google Search Console
-    // <meta name="google-site-verification" content="ZSrji5wGOZunah__ECMZMF3XeJOZLczdd4fVobVy6Lk" />
+    google: "ZSrji5wGOZunah__ECMZMF3XeJOZLczdd4fVobVy6Lk",
+    other:{
+      'msvalidate.01': '5CF5A89C7C8A4F204D6AAFE2173F952F',
+    } 
+    // <meta name="msvalidate.01" content="5CF5A89C7C8A4F204D6AAFE2173F952F" />
   },
 };
 
