@@ -44,6 +44,12 @@ const certifications: Certification[] = [
     issuer: "IBM - SkillsBuild",
     year: "2026",
     path: "/certificates/ibm_python.jpg"
+  },
+  {
+    title: "Fundamentals of Responsible AI for All",
+    issuer: "Kwame Nkrumah University of Science and Technology",
+    year: "2026",
+    path: "/certificates/knust_ai_course.jpg"
   }
 ];
 
