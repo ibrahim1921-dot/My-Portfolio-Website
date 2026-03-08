@@ -1,6 +1,10 @@
+
+
 import { getPostBySlug, getAllSlugs } from "@/lib/blog";
 import { notFound } from "next/navigation";
-import { Container, Typography, Box, Chip, Stack } from "@mui/material";
+import Link from "next/link";
+import { Container, Typography, Box, Chip, Stack, Button } from "@mui/material";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { remark } from "remark";
 import html from "remark-html";
 import { Metadata } from "next";
@@ -105,6 +109,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       />
       <Container maxWidth="md" sx={{ py: 8 }}>
         <Stack spacing={4}>
+          {/*Back button */}
+          <Button
+            component="a"
+            href="/blog"
+            startIcon={<ArrowBackIcon />}
+            sx={{
+              alignSelf: "flex-start",
+              textTransform: "none",
+              fontWeight: 600,
+            }}
+          >
+            Back to blogs
+          </Button>
           {/* Blog Header */}
           <Box>
             <Chip label={post.category} sx={{ mb: 2 }} />
