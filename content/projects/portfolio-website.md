@@ -7,7 +7,7 @@ category: "Frontend"
 technologies: ["Next.js", "TypeScript", "Material-UI", "Markdown"]
 githubUrl: "https://github.com/ibrahim1921-dot/My-Portfolio-Website"
 liveUrl: "https://abdul-sobur-portfolio.vercel.app/"
-featured: false
+featured: true
 date: "2026-06-01"
 ---
 

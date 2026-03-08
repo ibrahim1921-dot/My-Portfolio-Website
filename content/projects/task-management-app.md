@@ -7,7 +7,7 @@ category: "Full-Stack"
 technologies: ["React", "MongoDB", "Express"]
 githubUrl: "https://github.com/ibrahim1921-dot/todo-frontend"
 liveUrl: "https://todo-frontend-two-xi.vercel.app/"
-featured: true
+featured: false
 date: "2025-11-20"
 ---
 
