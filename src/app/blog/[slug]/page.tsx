@@ -2,7 +2,6 @@
 
 import { getPostBySlug, getAllSlugs } from "@/lib/blog";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import { Container, Typography, Box, Chip, Stack, Button } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { remark } from "remark";
