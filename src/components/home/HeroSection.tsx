@@ -1,6 +1,7 @@
 "use client";
 
 import { Box, Container, Typography, Button, Stack } from "@mui/material";
+import DownloadIcon from "@mui/icons-material/Download";
 import Link from "next/link";
 
 export default function HeroSection() {
@@ -43,9 +44,8 @@ export default function HeroSection() {
                   maxWidth: "600px",
                 }}
               >
-                I&apos;m Abdul-Sobur Ibrahim, a full-stack developer working
-                with JavaScript frameworks and Python, documenting my journey
-                and constantly learning through real-world projects.
+                Full-Stack Developer building web and mobile apps with React,
+                Next.js, React Native, and Node.js — based in Kumasi, Ghana.
               </Typography>
             </Stack>
 
@@ -86,6 +86,29 @@ export default function HeroSection() {
                 }}
               >
                 Read Blog
+              </Button>
+              <Button
+                component="a"
+                href="/cv.pdf"
+                download
+                variant="text"
+                size="large"
+                startIcon={<DownloadIcon />}
+                sx={{
+                  px: 3,
+                  py: 1.5,
+                  fontSize: "1rem",
+                  fontWeight: 700,
+                  textTransform: "none",
+                  borderRadius: 2,
+                  color: "text.secondary",
+                  "&:hover": {
+                    color: "primary.main",
+                    bgcolor: "transparent",
+                  },
+                }}
+              >
+                Download CV
               </Button>
             </Stack>
           </Stack>

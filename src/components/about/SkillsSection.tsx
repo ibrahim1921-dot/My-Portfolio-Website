@@ -5,29 +5,32 @@ import {
   Container,
   Typography,
   Stack,
-  LinearProgress,
   Paper,
   Grid,
+  Chip,
 } from "@mui/material";
 
-interface Skill {
-  name: string;
-  level: number;
-  category: string;
+interface Category {
+  label: string;
+  skills: string[];
 }
 
-const skills: Skill[] = [
-  { name: "React/Next.js", level: 85, category: "Frontend" },
-  { name: "TypeScript", level: 75, category: "Frontend" },
-  { name: "Material-UI", level: 80, category: "Frontend" },
-  { name: "Node.js/Express", level: 82, category: "Backend" },
-  { name: "PostgreSQL/MongoDB", level: 75, category: "Backend" },
-  { name: "Git/GitHub", level: 90, category: "Tools" },
+const categories: Category[] = [
+  {
+    label: "Frontend",
+    skills: ["React", "Next.js", "TypeScript", "JavaScript", "Material-UI", "CSS3", "Vite"],
+  },
+  {
+    label: "Backend",
+    skills: ["Node.js", "Express", "Python", "PostgreSQL", "MongoDB", "REST APIs"],
+  },
+  {
+    label: "Tools & Mobile",
+    skills: ["Git", "GitHub", "React Native", "Expo", "Vercel", "VS Code"],
+  },
 ];
 
 export default function SkillsSection() {
-  const categories = ["Frontend", "Backend", "Tools"];
-
   return (
     <Box
       component="section"
@@ -53,14 +56,14 @@ export default function SkillsSection() {
               Skills & Technologies
             </Typography>
             <Typography variant="body1" color="text.secondary">
-              Technologies I work with regularly and my proficiency level
+              Technologies I work with regularly
             </Typography>
           </Stack>
 
           {/* Skills by Category */}
           <Grid container spacing={4}>
             {categories.map((category) => (
-              <Grid size={{xs: 12, md: 4}} key={category}>
+              <Grid size={{ xs: 12, md: 4 }} key={category.label}>
                 <Paper
                   elevation={0}
                   sx={{
@@ -71,52 +74,40 @@ export default function SkillsSection() {
                     height: "100%",
                   }}
                 >
-                  <Stack spacing={3}>
+                  <Stack spacing={2.5}>
                     <Typography
                       variant="h6"
                       sx={{
                         fontWeight: 700,
                         color: "primary.main",
-                        mb: 1,
                       }}
                     >
-                      {category}
+                      {category.label}
                     </Typography>
 
-                    {skills
-                      .filter((skill) => skill.category === category)
-                      .map((skill) => (
-                        <Stack key={skill.name} spacing={1}>
-                          <Stack
-                            direction="row"
-                            justifyContent="space-between"
-                            alignItems="center"
-                          >
-                            <Typography variant="body2" fontWeight={600}>
-                              {skill.name}
-                            </Typography>
-                            <Typography
-                              variant="caption"
-                              color="text.secondary"
-                              fontWeight={700}
-                            >
-                              {skill.level}%
-                            </Typography>
-                          </Stack>
-                          <LinearProgress
-                            variant="determinate"
-                            value={skill.level}
-                            sx={{
-                              height: 8,
-                              borderRadius: 1,
-                              bgcolor: "action.hover",
-                              "& .MuiLinearProgress-bar": {
-                                borderRadius: 1,
-                              },
-                            }}
-                          />
-                        </Stack>
+                    <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
+                      {category.skills.map((skill) => (
+                        <Chip
+                          key={skill}
+                          label={skill}
+                          size="small"
+                          sx={{
+                            fontWeight: 500,
+                            borderRadius: 1.5,
+                            bgcolor: "action.hover",
+                            color: "text.primary",
+                            border: 1,
+                            borderColor: "divider",
+                            "&:hover": {
+                              bgcolor: "primary.main",
+                              color: "primary.contrastText",
+                              borderColor: "primary.main",
+                            },
+                            transition: "all 0.2s ease",
+                          }}
+                        />
                       ))}
+                    </Box>
                   </Stack>
                 </Paper>
               </Grid>

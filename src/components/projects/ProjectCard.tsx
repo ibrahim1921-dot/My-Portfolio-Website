@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import LaunchIcon from "@mui/icons-material/Launch";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import type { Project } from "@/types/project";
 
@@ -183,7 +184,26 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           >
             View Details
           </Button>
-          {/* {project.liveUrl && (
+          {project.githubUrl && (
+            <Button
+              component={Link}
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="outlined"
+              size="small"
+              startIcon={<GitHubIcon />}
+              sx={{
+                textTransform: "none",
+                fontWeight: 600,
+                minWidth: "unset",
+                px: 1.5,
+              }}
+            >
+              Code
+            </Button>
+          )}
+          {project.liveUrl && (
             <Button
               component={Link}
               href={project.liveUrl}
@@ -195,11 +215,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               sx={{
                 textTransform: "none",
                 fontWeight: 600,
+                minWidth: "unset",
+                px: 1.5,
               }}
             >
               Live
             </Button>
-          )} */}
+          )}
         </Stack>
       </CardContent>
     </Card>

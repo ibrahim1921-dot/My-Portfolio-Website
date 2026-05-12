@@ -102,12 +102,14 @@ export default function AboutHero() {
               mt: 2,
             }}
           >
-            I&apos;m a passionate full-stack developer with a love for creating
-            elegant solutions to complex problems. With expertise in modern web
-            technologies and a keen eye for design, I build applications that
-            are not only functional but also delightful to use. When I&apos;m
-            not coding, you&apos;ll find me writing technical articles,
-            exploring new technologies, or contributing to open-source projects.
+            I&apos;m a Computer Science student at KNUST and a full-stack
+            developer who builds web and mobile applications with React,
+            Next.js, and Node.js. I started coding to understand how things
+            work — and stayed because there is nothing quite like shipping
+            something real that other people can use. Outside of projects, I
+            write technical articles to document what I learn and help other
+            developers avoid the same walls I ran into. I am currently open to
+            freelance work and internship opportunities.
           </Typography>
         </Stack>
       </Container>
