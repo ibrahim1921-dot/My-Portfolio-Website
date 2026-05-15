@@ -50,6 +50,12 @@ const certifications: Certification[] = [
     issuer: "Kwame Nkrumah University of Science and Technology",
     year: "2026",
     path: "/certificates/knust_ai_course.jpg"
+  },
+  {
+    title: "Claude Code in Action",
+    issuer: "Anthropic",
+    year: "2026",
+    path: "/certificates/claude_code.jpg"
   }
 ];
 

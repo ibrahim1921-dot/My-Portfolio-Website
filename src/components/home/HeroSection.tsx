@@ -87,7 +87,7 @@ export default function HeroSection() {
               >
                 Read Blog
               </Button>
-              <Button
+              {/* <Button
                 component="a"
                 href="/cv.pdf"
                 download
@@ -109,7 +109,7 @@ export default function HeroSection() {
                 }}
               >
                 Download CV
-              </Button>
+              </Button> */}
             </Stack>
           </Stack>
 
