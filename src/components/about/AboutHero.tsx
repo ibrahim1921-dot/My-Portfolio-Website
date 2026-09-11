@@ -1,9 +1,10 @@
 "use client";
 
-import { Box, Container, Typography, Stack, Avatar, Chip } from "@mui/material";
+import { Box, Container, Typography, Stack, Avatar, Chip, Button } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import EmailIcon from "@mui/icons-material/Email";
 import WorkIcon from "@mui/icons-material/Work";
+import DownloadIcon from "@mui/icons-material/Download";
 
 export default function AboutHero() {
   return (
@@ -111,6 +112,33 @@ export default function AboutHero() {
             developers avoid the same walls I ran into. I am currently open to
             freelance work and internship opportunities.
           </Typography>
+
+          {/* Download CV Button */}
+          <Button
+            component="a"
+            href="/cv.pdf"
+            download
+            variant="contained"
+            size="large"
+            startIcon={<DownloadIcon />}
+            sx={{
+              mt: 2,
+              px: 4,
+              py: 1.5,
+              fontSize: "1.125rem",
+              fontWeight: 700,
+              textTransform: "none",
+              borderRadius: 2,
+              boxShadow: "0 8px 16px rgba(55, 19, 236, 0.2)",
+              transition: "transform 0.2s",
+              "&:hover": {
+                transform: "scale(1.05)",
+                boxShadow: "0 12px 20px rgba(55, 19, 236, 0.3)",
+              },
+            }}
+          >
+            Download CV
+          </Button>
         </Stack>
       </Container>
     </Box>
