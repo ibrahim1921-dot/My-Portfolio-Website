@@ -12,20 +12,21 @@ interface Experience {
 }
 
 const experiences: Experience[] = [
-  
   {
-    title: "Full-Stack Developer",
-    period: "Dec 2025 - present",
+    title: "Founder & Full-Stack Developer",
+    company: "ITechnologies",
+    period: "April 2026 - Present",
     description:
-      "Built and maintained multiple client-facing applications. Implemented RESTful APIs and integrated third-party services. Reduced page load times by 60% through optimization techniques.",
-    technologies: ["React","Next.js", "MongoDB", "Node.js", "Express"],
+      "Founded and building software products for the Ghanaian market. Currently developing BundleHub, a live mobile data reseller platform supporting MTN, Telecel, and AirtelTigo, handling wallet pre-funding, provider routing, and background job processing for order delivery. Also building ScholarLink, an AI-powered scholarship matching platform for Ghanaian students, submitted to CodeQuest 2026.",
+    technologies: ["Node.js", "TypeScript", "Express", "Prisma", "PostgreSQL", "Next.js", "React Native", "BullMQ", "Paystack"],
   },
   {
-    title: "Junior Developer",
-    period: "Feb 2025 - Sept 2025",
+    title: "Software Development Intern",
+    company: "OpenLabs Ghana",
+    period: "Sept 2025 - Dec 2025",
     description:
-      "Developed responsive websites and web applications for various clients. Worked closely with designers to implement pixel-perfect UI components. Gained strong foundation in modern web development practices.",
-    technologies: ["JavaScript", "HTML/CSS"],
+      "Led the frontend team in building a teaching assistant application, and occasionally taught students directly as part of the internship.",
+    technologies: ["React", "MUI"],
   },
 ];
 
